@@ -1,6 +1,7 @@
-package com.okta.developer.matrixapi;
+package com.okta.developer.matrixapi.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -15,19 +16,17 @@ import java.util.Arrays;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.authorizeRequests().anyRequest().authenticated().and().oauth2Login().and().oauth2ResourceServer().jwt();
-        http.cors();
 
+       /* http.authorizeRequests().anyRequest()
+                .authenticated().and().oauth2Login()
+                .and().oauth2ResourceServer().jwt();*/
+
+        http.antMatcher("/**")
+                .authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/").permitAll()
+                .anyRequest().authenticated();
+        http.oauth2ResourceServer().jwt();
     }
-/*
-    @Bean
-    CorsConfigurationSource configurationSource(){
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }*/
 
 }

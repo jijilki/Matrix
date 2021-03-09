@@ -1,4 +1,4 @@
-package com.okta.developer.repo;
+package com.okta.developer.matrixapi.repo;
 
 
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;

@@ -1,7 +1,7 @@
-package com.okta.developer.controller;
+package com.okta.developer.matrixapi.controller;
 
-import com.okta.developer.repo.NoteRepository;
-import com.okta.developer.repo.Note;
+import com.okta.developer.matrixapi.repo.NoteRepository;
+import com.okta.developer.matrixapi.repo.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 import java.util.List;
-@CrossOrigin(origins = "*.*", maxAge = 3600)
+
+@CrossOrigin(origins = "*")
 @RestController
 public class MatrixController {
     @Autowired
     NoteRepository noteRepository;
+
 
     @GetMapping("user/notes")
     public List<Note> getUserNotes(Principal principal){

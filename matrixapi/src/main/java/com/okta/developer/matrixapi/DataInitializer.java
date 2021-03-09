@@ -1,7 +1,7 @@
 package com.okta.developer.matrixapi;
 
-import com.okta.developer.repo.Note;
-import com.okta.developer.repo.NoteRepository;
+import com.okta.developer.matrixapi.repo.Note;
+import com.okta.developer.matrixapi.repo.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
