@@ -10,6 +10,7 @@ Here we have used RepositoryRestResource , hence the repo itself creates the RES
 
 Used Open API UI - which provides Swagger URL ( shows only end points in Controller though, end points made with @RepositoryResource ) will not be available.
 @RepositoryEventHandler used to add the user to the Note automatically , refer AddUsertoNotes class.
+Used  grant type : Authorization Grant
 
 
 
