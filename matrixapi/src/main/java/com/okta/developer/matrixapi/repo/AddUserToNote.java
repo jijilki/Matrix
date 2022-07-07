@@ -7,7 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 @Component
-@RepositoryEventHandler({Note.class})
+@RepositoryEventHandler(Note.class)
 public class AddUserToNote {
 
     @HandleBeforeCreate

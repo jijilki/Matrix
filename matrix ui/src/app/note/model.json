@@ -2,7 +2,7 @@
   "title": "Notes",
   "entity": "note",
   "api": {
-    "url": "http://localhost:8080/api/notes"
+    "url": "http://localhost:8080/notes"
   },
   "filter": [
     "title"

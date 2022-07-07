@@ -3,6 +3,7 @@ import { NoteFilter } from './note-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 const headers = new HttpHeaders().set('Accept', 'application/json');
 
@@ -35,7 +36,7 @@ export class NoteService {
       'title': filter.title,
     };
 
-    return this.http.get<Note[]>(this.api, {params, headers});
+    return this.http.get<any>(this.api, {params, headers}).pipe(map(res => res._embedded.notes as Note[]));
   }
 
   save(entity: Note): Observable<Note> {

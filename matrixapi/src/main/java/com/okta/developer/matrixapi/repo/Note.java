@@ -23,6 +23,13 @@ public class Note {
         this.setTitle(note);
     }
 
+    public Note(Long id, String title, String text, String user) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.user = user;
+    }
+
     public Long getId() {
         return id;
     }

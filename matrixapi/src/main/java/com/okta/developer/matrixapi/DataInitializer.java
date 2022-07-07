@@ -26,9 +26,11 @@ class DataInitialize  implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         List<Note> noteList = new ArrayList<Note>();
-        noteList.add(new Note("note1"));
-        noteList.add(new Note("note2"));
-        noteList.add(new Note("note3"));
+        noteList.add(new Note("Buy Food"));
+        noteList.add(new Note("Go to Groceries"));
+        noteList.add(new Note("Pay Bill"));
+
+        noteList.add(new Note(null, "Learning task" ,"Complete Mandatory learning modules", "jijilki@gmail.com"));
 
        for (Note note :noteList){
 
